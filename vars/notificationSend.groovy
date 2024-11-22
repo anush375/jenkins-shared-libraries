@@ -1,5 +1,5 @@
-def call(String name){
-    if ${currentBuild} == 'SUCCESS'{
+def call(String currentBuild){
+    if (currentBuild == SUCCESS){
           emailext (subject: "SUCCESSFUL: Job ${env.JOB_NAME}", 
                      body: """<html> 
                                 <body>
@@ -11,7 +11,7 @@ def call(String name){
                      to: "salimovanusher6@gmail.com",
                      mimeType: 'text/html')
     }
-    else{
+    else {
             emailext (body: "Job ${env.JOB_NAME} with ${env.BUILD_NUMBER} attempts has failed", 
                 subject: "SUCCESSFUL: Job ${env.JOB_NAME}", 
                 to: "salimovanusher6@gmail.com")

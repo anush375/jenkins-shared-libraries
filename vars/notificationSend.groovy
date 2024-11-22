@@ -1,5 +1,5 @@
 def call(String currentBuild){
-    if (currentBuild == SUCCESS){
+    if (currentBuild == "SUCCESS"){
           emailext (subject: "SUCCESSFUL: Job ${env.JOB_NAME}", 
                      body: """<html> 
                                 <body>
